@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="/css/styleindex.css" />
+  <title>Thực tập cơ sở</title>
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <meta name="viewport' content=" width=device-width, inittial-scale="1.0">
+</head>
+
+<body>
+  <div id="wrapper">
+    <!-- Thanh topbar -->
+    <div id="topbar">
+      <image src="/image/logo.png" class="logo">
+        <div class="menu">
+          <input type="text" class="searchbar" placeholder="Nhập tên sản phẩm muốn tìm?"></input>
+          <button class="searchbutton">Tìm kiếm</button>
+          <button class="cart">Giỏ hàng</button>
+          <a href="Dfs.html"><button id="dfs">Thuật toán DFS</button></a>
+          <a href="hoanvi.html"><button id="sinhhoanvi">Thuật toán sinh hoán vị</button></a>
+
+          <script>
+            document.getElementById('dfs').onclick = function () {
+              window.location.href = 'Dfs.html';
+            };
+
+            document.getElementById('sinhhoanvi').onclick = function () {
+              window.location.href = 'hoanvi.html';
+            };
+          </script>
+        </div>
+
+    </div>
+    <!-- Banner -->
+    <div id="banner">
+      <div class="box-left">
+        <h2>
+          <span>ĐỒ CHƠI LEGO</span>
+          <br>
+          <span>CHÍNH HÃNG</span>
+        </h2>
+        <p>Chuyên cung cấp các loại đồ chơi lego chính hãng,
+          đa dạng, phong phú,phù hợp mọi lứa tuổi
+        </p>
+        <button>Đặt mua ngay</button>
+      </div>
+      <div class="box-right">
+        <img src="/image/Ninjago.jpg">
+        <img src="/image/Bionicle.png">
+        <image src="/image/Ifrit.jpg">
+      </div>
+    </div>
+    <!-- Danh sách sản phẩm -->
+    <div id="wp-product">
+      <h2>Sản phẩm bán chạy</h2>
+      <div class="product-list">
+        <script src="/js/product-list.js"></script>
+      </div>
+    </div>
+
+    <div id="cartModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Giỏ hàng của bạn</h2>
+        <div id="cart-items"></div>
+        <div class="customer-info">
+          <h3>Thông tin thanh toán</h3>
+          <p>Tên:</p>
+          <input type="text" id="customer-name" placeholder="Tên" required="yes">
+          <p>Số điện thoại:</p>
+          <input type="text" id="customer-phone" placeholder="Số điện thoại" required>
+          <p>Địa chỉ</p>
+          <input type="text" id="customer-address" placeholder="Địa chỉ" required>
+          <p>Email:</p>
+          <input type="email" id="customer-email" placeholder="Email">
+          <p>Ghi chú</p>
+          <textarea id="customer-note" placeholder="Ghi chú"></textarea>
+          <button id="confirm-order" onclick="thongbao()">Xác nhận đơn hàng</button>
+          <script>
+              function thongbao(){
+              var name = document.getElementById("customer-name").value;
+              var phone = document.getElementById("customer-phone").value;
+              var address = document.getElementById("customer-address").value;
+
+              if (name.trim() === "" || phone.trim() === "" || address.trim() === "") {
+                alert("Tên, số điện thoại, và địa chỉ không được để trống.");
+                event.preventDefault(); // Prevent form submission
+              }
+              else{
+                alert("Đơn hàng của bạn đã đặt thành công")
+              }
+            };
+          </script>
+        </div>
+      </div>
+      <script src="/js/cart.js"></script>
+    </div>
+    <div class="footer">
+      <div class="footer-info">
+        <p><strong>Design by Nguyễn Quang Anh</strong>  </p>
+        <p><strong>HỌC VIỆN CÔNG NGHỆ BƯU CHÍNH VIỄN THÔNG</strong></p>
+        <p><strong>Mã sinh viên:</strong> B21DCCN005</p>
+        <p><strong>Số điện thoại:</strong> 0906233182</p>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</body>
+
+</html>

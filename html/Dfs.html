@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/styledfs.css" />
+    <title>Dragging Nodes and Alpha Values</title> 
+    <script src="https://d3js.org/d3.v4.js"></script>
+  </head>
+  <body>
+    <h1>Thuật toán DFS</h1>
+    <div id='wrapper'>
+    <div class='nhapdulieu'>
+      <script src="/js/graph.js"></script>
+      <p>Nhập các đỉnh của bạn:</p>
+      <input id="nodeInput" placeholder="Nhập các đỉnh" ></input>
+      <!-- <button onclick=addNode()>Thêm Đỉnh</button> -->
+      <p>Nhập các cạnh của bạn:</p>
+      <input id="edge" placeholder="Nhập các cạnh"></input>
+      <!-- <button onclick=generateLinks()>Tạo Liên Kết</button> -->
+      <p>Nhập đỉnh bắt đầu:<input id="start" placeholder="Nhập đỉnh bắt đầu"></p>
+      <p>Nhập đỉnh kết thúc:<input id="end" placeholder="Nhập đỉnh kết thúc"></p>
+      <button onclick=drawGraph()>Vẽ</button>
+      <button onclick=deleteGraph()>Xóa</button>
+      <p id="KQ"></p>
+    </div>
+    <div class='graphWrapper'>
+      <p>Đồ thị</p>
+      <div id="graph"></div>
+    </div> 
+  </div>
+  </body>
+</html>
